@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  body { margin: 0; background: #FBF6EC; color: #1A160F; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #7A1F32; text-decoration: none; }
+  a:hover { color: #1A160F; }
+  input, textarea, select, button { font-family: inherit; }
+  ::placeholder { color: #A79C8A; }
+  @media (max-width: 760px) {
+    #dc-root [style*="grid-template-columns"]:not([style*="repeat(7"]) { grid-template-columns: minmax(0, 1fr) !important; }
+    #dc-root [style*="grid-auto-rows"] > figure { grid-column: span 1 !important; grid-row: span 3 !important; }
+    #dc-root header { padding: 14px 20px !important; flex-wrap: wrap !important; gap: 12px !important; }
+    #dc-root header nav { flex: 1 1 100% !important; justify-content: flex-start !important; gap: 18px !important; }
+    #dc-root section { padding-left: 20px !important; padding-right: 20px !important; }
+    #dc-root [style*="padding: 100px"] { padding-top: 56px !important; padding-bottom: 56px !important; }
+    #dc-root [style*="padding: 90px"] { padding-top: 52px !important; padding-bottom: 52px !important; }
+    #dc-root h1 { font-size: 46px !important; }
+    #dc-root h2 { font-size: 32px !important; }
+    #dc-root h3 { font-size: 21px !important; }
+    #dc-root section p { font-size: 17px !important; }
+    #dc-root table { font-size: 12px !important; }
+    #dc-root section[style*="hero.png"] { background-size: contain !important; background-position: top center !important; background-repeat: no-repeat !important; min-height: 640px !important; }
+    #dc-root section[style*="hero.png"] > div:first-child { background: linear-gradient(to top, rgba(20,10,12,0.96) 0%, rgba(20,10,12,0.9) 42%, rgba(20,10,12,0.35) 62%, rgba(20,10,12,0.15) 100%) !important; }
+  }
+</style>
+</helmet>
+<div style="font-family: 'JetBrains Mono', ui-monospace, monospace; background: #FBF6EC; color: #1A160F; overflow-x: hidden">
+
+  <header style="position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 44px; background: rgba(251,246,236,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #1A160F">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <div style="position: relative; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center">
+        <div style="position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(#7A1F32 0deg 10deg, transparent 10deg 45deg)"></div>
+        <div style="position: relative; width: 13px; height: 13px; border-radius: 50%; background: #7A1F32"></div>
+      </div>
+      <span style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 25px; letter-spacing: 0.2em; text-transform: uppercase">Sunce</span>
+    </div>
+    <nav style="flex: 1; display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; white-space: nowrap; gap: 26px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase">
+      <a href="#o-nama" style="color: #1A160F">O nama</a>
+      <a href="meni.html" style="color: #1A160F">Meni</a>
+      <a href="galerija.html" style="color: #1A160F">Galerija</a>
+    </nav>
+    <a href="#kalendar" style="padding: 7px 14px; background: #D6F24A; color: #1A160F; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap">Zakaži</a>
+  </header>
+
+  <section style="position: relative; min-height: calc(100vh - 57px); display: flex; align-items: flex-end; background-color: #1A160F; background-image: url('images/hero.png'); background-size: cover; background-position: center; border-bottom: 1px solid #1A160F">
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,10,12,0.88) 0%, rgba(20,10,12,0.55) 45%, rgba(20,10,12,0.25) 100%)"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 24px; width: 100%; padding: 0 44px 64px; color: #FBF6EC">
+      <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; white-space: nowrap; color: #D6F24A">Privatne večere · Beograd</div>
+      <h1 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 84px; line-height: 1; letter-spacing: -0.02em; text-wrap: balance">Svaki zalogaj<br />pronalazi<br /><em style="font-style: italic; color: #E4B7C0">svoj gutljaj.</em></h1>
+      <p style="margin: 0; max-width: 46ch; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; line-height: 1.5; color: rgba(251,246,236,0.86); text-wrap: pretty">Neke priče se pričaju, naša se servira.</p>
+      <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding-top: 4px">
+        <a href="#kalendar" style="padding: 14px 26px; background: #D6F24A; color: #1A160F; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase">Izaberi datum</a>
+        <a href="meni.html" style="padding: 14px 26px; border: 1px solid rgba(251,246,236,0.7); color: #FBF6EC; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase">Pogledaj meni</a>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 8px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase">
+        <span style="padding: 6px 12px; background: rgba(251,246,236,0.14); border: 1px solid rgba(251,246,236,0.4)">2—12 gostiju</span>
+        <span style="padding: 6px 12px; background: rgba(251,246,236,0.14); border: 1px solid rgba(251,246,236,0.4)">Četvrtak — nedelja</span>
+        <span style="padding: 6px 12px; background: rgba(251,246,236,0.14); border: 1px solid rgba(251,246,236,0.4)">Jedan sto po večeri</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="o-nama" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; padding: 100px 44px; border-bottom: 1px solid #1A160F">
+    <div style="display: flex; flex-direction: column; gap: 20px; min-width: 0">
+      <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F32">01 — O nama</div>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Mihailo i Maša</h2>
+      <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; color: #423A2C; text-wrap: pretty">Mihailo je stažirao širom Evrope, po kuhinjama sa Mišelinovim zvezdama, i radio uz kuvare od kojih je naučio da najbolji zalogaj obično nije najkomplikovaniji — nego onaj kod kog je svaki sastojak imao razlog da bude na tanjiru.</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; color: #423A2C; text-wrap: pretty">Maša je u isto vreme išla drugim putem: koktele je učila kao zanat, kroz ukuse i namirnice — koja kiselina podiže jelo, kada gorčina otvara apetit, šta se dešava kad se biljka iz sosa vrati u čašu.</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; color: #423A2C; text-wrap: pretty">Ideja za Sunce je nastala kad smo prvi put spremili večeru za prijatelje i shvatili da su najbolji trenuci bili oni kada su jelo i koktel bili osmišljeni zajedno. Zato kod nas piće nastaje posle jela, ne pre — prvo se odluči šta se služi, pa onda šta se pije.</p><p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; color: #423A2C; text-wrap: pretty">Kreiramo isključivo privatno, jedan sto po večeri. Meni pišemo za vaše goste, a ne obrnuto.</p>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 14px; background: #1A160F; border: 1px solid #1A160F">
+        <div style="padding: 18px 16px; background: #FBF6EC"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; line-height: 1">140+</div><div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #756A57; padding-top: 6px">večera</div></div>
+        <div style="padding: 18px 16px; background: #FBF6EC"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; line-height: 1">6</div><div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #756A57; padding-top: 6px">nedelja po meniju</div></div>
+        <div style="padding: 18px 16px; background: #FBF6EC"><div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 34px; line-height: 1">3.5h</div><div style="font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #756A57; padding-top: 6px">za stolom</div></div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; min-width: 0">
+      <div style="min-width: 0; aspect-ratio: 3/4; border: 1px solid #1A160F; background-color: #1A160F; background-image: url('images/masa.png'); background-size: cover; background-position: 60% center"></div>
+      <div style="min-width: 0; aspect-ratio: 3/4; margin-top: 36px; border: 1px solid #1A160F; background-color: #1A160F; background-image: url('images/mihailo.png'); background-size: cover; background-position: 55% center"></div>
+    </div>
+  </section>
+
+  <section style="padding: 100px 44px; background: #5E1626; color: #FBF6EC; border-bottom: 1px solid #1A160F">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 620px; margin-bottom: 52px">
+      <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #E4B7C0">02 — Kako radi</div>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Tri koraka do večere</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #1A160F; border: 1px solid #1A160F">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <div style="display: flex; flex-direction: column; gap: 14px; padding: 34px 30px 40px; background: #FBF6EC; min-width: 0">
+          <div style="font-size: 11px; letter-spacing: 0.2em; color: #7A1F32">{{ s.num }}</div>
+          <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 28px">{{ s.title }}</h3>
+          <p style="margin: 0; font-size: 13px; line-height: 1.75; color: #423A2C; text-wrap: pretty">{{ s.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="meni" style="padding: 100px 44px; border-bottom: 1px solid #1A160F">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; flex-wrap: wrap; margin-bottom: 44px">
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 640px">
+        <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F32">03 — Uparivanje</div>
+        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Primer letnjeg menija</h2>
+        <p style="margin: 0; font-size: 13px; line-height: 1.75; color: #423A2C">Menjamo ga svakih šest nedelja, prema pijaci. Vegetarijanska i bez-glutena verzija postoje za svaki kurs.</p>
+      </div>
+      <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Jelo &nbsp;/&nbsp; Koktel</div>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid #1A160F">
+      <sc-for list="{{ courses }}" as="c" hint-placeholder-count="5">
+        <div style="display: grid; grid-template-columns: 52px minmax(0, 1fr) minmax(0, 1fr); gap: 28px; align-items: start; padding: 26px 0; border-bottom: 1px solid rgba(26,22,15,0.25)">
+          <div style="font-size: 11px; letter-spacing: 0.16em; color: #7A1F32; padding-top: 10px">{{ c.no }}</div>
+          <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+            <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 30px; line-height: 1.15">{{ c.dish }}</h3>
+            <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #756A57">{{ c.dishNote }}</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0; padding-left: 26px; border-left: 3px solid #D6F24A">
+            <h4 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400; font-size: 25px; line-height: 1.2; color: #7A1F32">{{ c.drink }}</h4>
+            <p style="margin: 0; font-size: 12px; line-height: 1.7; color: #756A57">{{ c.drinkNote }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="galerija" style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1px; background: #1A160F; border-bottom: 1px solid #1A160F">
+    <div style="min-width: 0; aspect-ratio: 16/10; background-color: #1A160F; background-image: url('images/sto-pun-tanjira.png'); background-size: cover; background-position: center"></div>
+    <div style="min-width: 0; background-color: #1A160F; background-image: url('images/koktel-u-ruci.png'); background-size: cover; background-position: center"></div>
+    <div style="min-width: 0; background-color: #1A160F; background-image: url('images/detalj-deserta.png'); background-size: cover; background-position: center"></div>
+  </section>
+
+  <section id="kalendar" style="margin-top: 44px; padding: 100px 44px; background: #5E1626; color: #FBF6EC; border-bottom: 1px solid #1A160F">
+    <div style="display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 56px; align-items: start">
+      <div style="display: flex; flex-direction: column; gap: 16px; min-width: 0">
+        <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #E4B7C0">04 — Kalendar</div>
+        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Slobodni datumi</h2>
+        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; text-wrap: pretty">Kuvamo od četvrtka do nedelje, jedan sto po večeri. Izaberite datum i on ulazi u upit ispod.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 8px; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase">
+          <div style="display: flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; background: #FBF6EC; border: 1px solid #1A160F"></span> Slobodno</div>
+          <div style="display: flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; background: #EBD3D8; border: 1px solid #1A160F"></span> Zauzeto</div>
+          <div style="display: flex; align-items: center; gap: 10px"><span style="width: 14px; height: 14px; background: #7A1F32; border: 1px solid #1A160F"></span> Vaš izbor</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 30px; padding-top: 26px; border-top: 1px solid rgba(251,246,236,0.28)">
+          <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #E4B7C0">Kontakt</div>
+          <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 1.6">
+            <a href="tel:+381600000000" style="color: #FBF6EC" style-hover="color: #D6F24A">+381 60 000 0000</a>
+            <a href="mailto:sunce@utanjiru.rs" style="color: #FBF6EC" style-hover="color: #D6F24A">sunce@utanjiru.rs</a>
+            <a href="https://instagram.com" style="color: #FBF6EC" style-hover="color: #D6F24A">Instagram — @sunce.vecere</a>
+            <a href="https://youtube.com" style="color: #FBF6EC" style-hover="color: #D6F24A">YouTube — Sunce</a>
+          </div>
+          <div style="padding-top: 10px; font-size: 10px; line-height: 2; letter-spacing: 0.14em; text-transform: uppercase; color: #E4B7C0">Beograd i okolina<br />Odgovaramo u toku dana</div>
+        </div>
+      </div>
+      <div style="min-width: 0; background: #FBF6EC; color: #1A160F; border: 1px solid #1A160F">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border-bottom: 1px solid #1A160F">
+          <button onClick="{{ prevMonth }}" style="padding: 7px 13px; background: transparent; border: 1px solid #1A160F; color: #1A160F; font-size: 12px; cursor: pointer">←</button>
+          <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; letter-spacing: 0.04em">{{ monthLabel }}</div>
+          <button onClick="{{ nextMonth }}" style="padding: 7px 13px; background: transparent; border: 1px solid #1A160F; color: #1A160F; font-size: 12px; cursor: pointer">→</button>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); padding: 14px 18px 4px; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #756A57">
+          <sc-for list="{{ weekdays }}" as="w" hint-placeholder-count="7">
+            <div style="text-align: center; padding: 6px 0">{{ w }}</div>
+          </sc-for>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; padding: 4px 18px 18px">
+          <sc-for list="{{ days }}" as="d" hint-placeholder-count="35">
+            <button onClick="{{ d.pick }}" disabled="{{ d.disabled }}" style="{{ d.style }}">{{ d.label }}</button>
+          </sc-for>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 18px; border-top: 1px solid #1A160F; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase">
+          <span style="color: #756A57">Izabrano</span>
+          <span>{{ selectedLabel }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ quotesVisible }}" hint-placeholder-val="{{ true }}">
+  <section style="display: flex; flex-direction: column; gap: 34px; padding: 100px 44px; border-bottom: 1px solid #1A160F">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+        <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F32">05 — Utisci</div>
+        <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Šta kažu gosti</h2>
+      </div>
+      <div style="font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Kliknite na utisak za ceo tekst</div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #1A160F; border: 1px solid #1A160F">
+      <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+        <div onClick="{{ q.openQuote }}" style="display: flex; flex-direction: column; justify-content: space-between; gap: 22px; padding: 42px 32px; background: #FBF6EC; min-width: 0; cursor: pointer" style-hover="background: #F2EADA">
+          <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 26px; line-height: 1.4; text-wrap: pretty">{{ q.text }}</p>
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 14px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">
+            <span>{{ q.who }}</span>
+            <span style="color: #7A1F32">Ceo utisak →</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ quoteOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeQuote }}" style="position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center; padding: 40px; background: rgba(12,10,7,0.9)">
+      <div style="display: flex; flex-direction: column; gap: 22px; max-width: 720px; padding: 52px 48px; background: #FBF6EC; border: 1px solid #1A160F">
+        <div style="font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #7A1F32">Utisak gosta</div>
+        <p style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 300; font-size: 30px; line-height: 1.35; text-wrap: pretty">{{ quoteText }}</p>
+        <p style="margin: 0; font-size: 14px; line-height: 1.85; color: #423A2C; text-wrap: pretty">{{ quoteFull }}</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 10px; border-top: 1px solid rgba(26,22,15,0.25); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">
+          <span>{{ quoteWho }}</span>
+          <span style="color: #7A1F32">Zatvori ✕</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <section style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 34px; padding: 100px 44px; border-bottom: 1px solid #1A160F">
+    <div style="display: flex; flex-direction: column; gap: 12px; min-width: 0">
+      <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F32">06 — Pitanja</div>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Često nas pitaju</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; min-width: 0; border-top: 1px solid #1A160F">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div onClick="{{ f.toggle }}" style="display: grid; grid-template-columns: minmax(0, 1fr) 24px; gap: 20px; align-items: start; padding: 22px 0; border-bottom: 1px solid rgba(26,22,15,0.25); cursor: pointer">
+          <div style="display: flex; flex-direction: column; gap: 10px; min-width: 0">
+            <h3 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.25">{{ f.q }}</h3>
+            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ true }}">
+              <p style="margin: 0; max-width: 66ch; font-size: 13px; line-height: 1.8; color: #423A2C; text-wrap: pretty">{{ f.a }}</p>
+            </sc-if>
+          </div>
+          <div style="text-align: right; font-size: 16px; color: #7A1F32">{{ f.sign }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="kontakt" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; padding: 100px 44px">
+    <div style="display: flex; flex-direction: column; gap: 18px; min-width: 0">
+      <div style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A1F32">07 — Kontakt</div>
+      <h2 style="margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; font-size: 48px; line-height: 1.05">Pošaljite upit</h2>
+      <p style="margin: 0; max-width: 42ch; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 21px; line-height: 1.6; color: #423A2C; text-wrap: pretty">Odgovaramo u toku dana. Ako je datum slobodan, sledi kratak razgovor telefonom pa predlog menija na mejl.</p>
+      <div style="display: flex; flex-direction: column; gap: 7px; padding-top: 12px; font-size: 13px; line-height: 1.7">
+        <a href="tel:+381600000000">+381 60 000 0000</a>
+        <a href="mailto:sunce@utanjiru.rs">sunce@utanjiru.rs</a>
+        <a href="https://instagram.com">Instagram — @sunce.vecere</a>
+        <a href="https://youtube.com">YouTube — Sunce</a>
+      </div>
+      <div style="padding-top: 16px; font-size: 10px; line-height: 2; letter-spacing: 0.14em; text-transform: uppercase; color: #756A57">Rezervacije obično 3+ nedelje unapred<br />Beograd i okolina</div>
+    </div>
+    <form onSubmit="{{ submit }}" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-content: start; min-width: 0">
+      <label style="display: flex; flex-direction: column; gap: 7px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Ime i prezime
+        <input type="text" placeholder="Jovana Jovanović" style="padding: 12px 13px; background: #FBF6EC; border: 1px solid #1A160F; color: #1A160F; font-size: 13px; letter-spacing: normal; text-transform: none" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 7px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Telefon
+        <input type="tel" placeholder="+381" style="padding: 12px 13px; background: #FBF6EC; border: 1px solid #1A160F; color: #1A160F; font-size: 13px; letter-spacing: normal; text-transform: none" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 7px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Datum iz kalendara
+        <input type="text" readOnly="{{ true }}" value="{{ selectedInput }}" placeholder="Izaberite gore" style="padding: 12px 13px; background: #F2EADA; border: 1px solid #1A160F; color: #1A160F; font-size: 13px; letter-spacing: normal; text-transform: none" />
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 7px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Broj gostiju
+        <select style="padding: 12px 13px; background: #FBF6EC; border: 1px solid #1A160F; color: #1A160F; font-size: 13px; letter-spacing: normal; text-transform: none">
+          <option>2</option>
+          <option>3 — 4</option>
+          <option>5 — 8</option>
+          <option>9 — 12</option>
+        </select>
+      </label>
+      <label style="grid-column: span 2; display: flex; flex-direction: column; gap: 7px; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: #756A57">Povod, alergije, prostor
+        <textarea rows="4" placeholder="Godišnjica, jedan gost ne jede ribu, stan sa malom kuhinjom…" style="padding: 12px 13px; background: #FBF6EC; border: 1px solid #1A160F; color: #1A160F; font-size: 13px; line-height: 1.7; letter-spacing: normal; text-transform: none; resize: vertical"></textarea>
+      </label>
+      <button type="submit" style="grid-column: span 2; justify-self: start; padding: 14px 30px; background: #7A1F32; border: 1px solid #1A160F; color: #FBF6EC; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer">{{ submitLabel }}</button>
+    </form>
+  </section>
+
+  <footer style="display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; padding: 30px 44px; border-top: 1px solid #1A160F; background: #1A160F; color: #FBF6EC; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase">
+    <span>Sunce — Mihailo i Maša</span>
+    <span>Privatne večere i uparivanje koktela</span>
+    <span>Beograd</span>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sadržaj&quot;},&quot;showExactPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sadržaj&quot;}}">
+class Component extends DCLogic {
+  state = { open: 0, sent: false, month: 8, year: 2026, selected: null, quote: null };
+
+  cellStyle(kind) {
+    const base = { padding: "11px 0", fontFamily: "'JetBrains Mono', monospace", fontSize: "12px", border: "1px solid #1A160F", textAlign: "center" };
+    if (kind === "empty") return { padding: "11px 0", border: "none", background: "transparent" };
+    if (kind === "selected") return Object.assign({}, base, { background: "#7A1F32", color: "#FBF6EC", cursor: "pointer" });
+    if (kind === "booked") return Object.assign({}, base, { background: "#EBD3D8", color: "#7A1F32", cursor: "not-allowed" });
+    if (kind === "free") return Object.assign({}, base, { background: "#FBF6EC", color: "#1A160F", cursor: "pointer" });
+    return Object.assign({}, base, { background: "transparent", color: "#C0B6A2", borderColor: "rgba(26,22,15,0.15)", cursor: "not-allowed" });
+  }
+
+  renderVals() {
+    const months = ["Januar","Februar","Mart","April","Maj","Jun","Jul","Avgust","Septembar","Oktobar","Novembar","Decembar"];
+    const { month, year, selected } = this.state;
+    const booked = { "2026-8": [11, 19, 26], "2026-9": [3, 10, 17, 24], "2026-10": [7, 14] };
+    const bookedThis = booked[year + "-" + month] || [];
+    const first = new Date(year, month, 1);
+    const lead = (first.getDay() + 6) % 7;
+    const total = new Date(year, month + 1, 0).getDate();
+    const today = new Date(2026, 7, 13);
+
+    const days = [];
+    for (let i = 0; i < lead; i++) days.push({ label: "", disabled: true, style: this.cellStyle("empty"), pick: () => {} });
+    for (let d = 1; d <= total; d++) {
+      const date = new Date(year, month, d);
+      const wd = date.getDay();
+      const isDinnerDay = wd === 4 || wd === 5 || wd === 6 || wd === 0;
+      const isPast = date < today;
+      const isBooked = bookedThis.indexOf(d) !== -1;
+      const isSelected = selected && selected.d === d && selected.m === month && selected.y === year;
+      let kind = "off";
+      if (isSelected) kind = "selected";
+      else if (isBooked && isDinnerDay && !isPast) kind = "booked";
+      else if (isDinnerDay && !isPast) kind = "free";
+      days.push({
+        label: String(d),
+        disabled: kind === "off" || kind === "booked",
+        style: this.cellStyle(kind),
+        pick: kind === "free" || kind === "selected" ? () => this.setState({ selected: { d, m: month, y: year } }) : () => {}
+      });
+    }
+
+    const selText = selected ? selected.d + ". " + months[selected.m].toLowerCase() + " " + selected.y + "." : "—";
+
+    const openQuote = this.state.quote;
+    const quoteData = [
+      {
+        text: "Prvi put smo imali goste u stanu, a da nismo ni ušli u kuhinju.",
+        who: "Ana i Miloš — godišnjica",
+        full: "Prvi put smo imali goste u stanu, a da nismo ni ušli u kuhinju. Mihailo i Maša su došli dva sata pre gostiju, doneli svoje posuđe i čaše, i od tog trenutka mi smo samo sedeli za stolom. Svaki kurs je izašao uz koktel koji je Maša objasnila u dve rečenice — bez predavanja. Posle deserta kuhinja je bila čistija nego pre nego što su ušli."
+      },
+      {
+        text: "Kokteli su bili razgovor za stolom. Niko nije očekivao da uz jagnjetinu ide dim.",
+        who: "Tijana — rođendan, 8 gostiju",
+        full: "Kokteli su bili razgovor za stolom. Niko nije očekivao da uz jagnjetinu ide dim. Pola stola inače ne pije žestoko, pa su za njih napravili dve bezalkoholne verzije koje su bile jednako zanimljive. Do kraja večeri svi su tražili recept, a Maša je svakome napisala proporcije na kartici."
+      },
+      {
+        text: "Meni su prepravili tri puta zbog moje sestre koja ne jede gluten. Bez jednog uzdaha.",
+        who: "Nikola — porodična večera",
+        full: "Meni su prepravili tri puta zbog moje sestre koja ne jede gluten. Bez jednog uzdaha. Zvali su je direktno da provere šta joj prija, pa se ceo meni promenio tako da niko za stolom nije dobio „posebnu” verziju — svi smo jeli isto. To je bio deo koji je moju mamu najviše iznenadio."
+      }
+    ];
+
+    const faqData = [
+      ["Šta nam je potrebno od opreme?", "Šporet, sudopera i sto. Sve ostalo — posuđe, čaše, led, escajg, stolnjak — donosimo mi."],
+      ["Koliko traje večera?", "Od dolaska gostiju do deserta obično tri i po sata. Mi dolazimo dva sata ranije i ostajemo oko sat posle."],
+      ["Može li bez alkohola?", "Da. Maša pravi bezalkoholnu verziju svakog koktela, iste složenosti, bez dodatne naplate."],
+      ["Radite li i van Beograda?", "Radimo. Za udaljenosti preko 80 km računamo i prenoćište, pa se to dogovara posebno."],
+      ["Kako se plaća?", "Trideset posto pri rezervaciji datuma, ostatak posle večere, računom ili prenosom."]
+    ];
+
+    return {
+      weekdays: ["Pon","Uto","Sre","Čet","Pet","Sub","Ned"],
+      days,
+      monthLabel: months[month] + " " + year,
+      selectedLabel: selText,
+      selectedInput: selected ? selText : "",
+      prevMonth: () => this.setState(s => ({ month: s.month === 0 ? 11 : s.month - 1, year: s.month === 0 ? s.year - 1 : s.year })),
+      nextMonth: () => this.setState(s => ({ month: s.month === 11 ? 0 : s.month + 1, year: s.month === 11 ? s.year + 1 : s.year })),
+      steps: [
+        { num: "01", title: "Razgovor", body: "Kažete nam datum, broj gostiju i povod. Pitamo za alergije, ukuse i kakva je kuhinja." },
+        { num: "02", title: "Meni", body: "Dogovaramo se oko paketa koji vam najviše odgovara i oko posebnih želja ili zahteva, ako ih ima. Onda pišemo meni sa koktelom uz svaki kurs." },
+        { num: "03", title: "Večera", body: "Dolazimo dva sata pre gostiju sa svime. Vi sedite za stolom, mi služimo i za sobom ostavljamo praznu kuhinju." }
+      ],
+      courses: [
+        { no: "I", dish: "Ostriga sa zelenom jabukom", dishNote: "Mignonette od sirćeta od jabuke, sveži ren.", drink: "Fino Spritz", drinkNote: "Šeri fino, soda, ulje limunove kore." },
+        { no: "II", dish: "Tartar od junetine, dimljeni žumance", dishNote: "Kapari, vlašac, hleb pečen na maslu.", drink: "Martini sa maslinovim salamurom", drinkNote: "Džin, suvi vermut, salamura od maslina." },
+        { no: "III", dish: "Rižoto sa mladim graškom i mentom", dishNote: "Pecorino od dvanaest meseci, biber iz mlina.", drink: "Bela negroni", drinkNote: "Džin, blanko vermut, gorki liker od bergamota." },
+        { no: "IV", dish: "Jagnjeće rebarce, pire od pečenog belog luka", dishNote: "Pečeno na drvenom uglju, sos od pečenja sa timijanom.", drink: "Dimljeni old fashioned", drinkNote: "Burbon, javorov sirup, dim od hrasta." },
+        { no: "V", dish: "Panakota od lovora, sirove višnje", dishNote: "Karamel od kajmaka, prah od kakaa.", drink: "Espresso martini", drinkNote: "Vodka, hladno cedena kafa iz Etiopije, kakao liker." }
+      ],
+      quotesVisible: this.props.showTestimonials ?? true,
+      tiers: [
+        { name: "Večera", price: (this.props.showExactPrices ?? true) ? "9.500" : "od 9.500", unit: "din / osoba", items: ["Pet kurseva", "Pet uparenih koktela", "Posuđe, čaše i escajg", "Služenje i čišćenje"] },
+        { name: "Večera + bar", price: (this.props.showExactPrices ?? true) ? "13.000" : "od 13.000", unit: "din / osoba", items: ["Sve iz osnovnog paketa", "Otvoren bar posle deserta", "Dva koktela po izboru gosta", "Maša ostaje do kraja večeri"] }
+      ],
+      quotes: quoteData.map((q, i) => ({
+        text: q.text, who: q.who,
+        openQuote: () => this.setState({ quote: i })
+      })),
+      quoteOpen: openQuote != null,
+      quoteFull: openQuote != null ? quoteData[openQuote].full : "",
+      quoteText: openQuote != null ? quoteData[openQuote].text : "",
+      quoteWho: openQuote != null ? quoteData[openQuote].who : "",
+      closeQuote: () => this.setState({ quote: null }),
+      faqs: faqData.map(([q, a], i) => ({
+        q, a,
+        open: this.state.open === i,
+        sign: this.state.open === i ? "−" : "+",
+        toggle: () => this.setState(s => ({ open: s.open === i ? -1 : i }))
+      })),
+      submitLabel: this.state.sent ? "Poslato — javljamo se" : "Pošalji upit",
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+
+</script>
+</body>
+</html>
